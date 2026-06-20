@@ -1,0 +1,63 @@
+baseURL = "https://alitariq4589.github.io/"
+languageCode = "en-us"
+title = "Ali Tariq"
+theme = "PaperMod"
+
+# pagination — handles any number of posts gracefully
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = "production"
+  description = "DevOps & platform engineering — Kubernetes, RISC-V, Linux kernel. Notes, projects, and writing."
+  author = "Ali Tariq"
+  defaultTheme = "auto"        # respects the reader's light/dark preference
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true   # copy button on code blocks — good for a dev blog
+  ShowToc = true
+  TocOpen = false
+
+  [params.homeInfoParams]
+    Title = "Ali Tariq"
+    Content = "Senior DevOps engineer. I work on Kubernetes platforms, RISC-V infrastructure, and the Linux kernel. I write about CI, platform engineering, and the tools I build."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/alitariq4589"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/ali-tariq-23bb271b7/"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:alitariq4589@gmail.com"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+
+# syntax highlighting for code blocks
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    style = "monokai"
