@@ -17,7 +17,7 @@ much CI you run.
 Wouldn't you rather have something read those four thousand lines for you, find the one that matters, and tell you whether to fix it or just retry? And do it without locking you to one LLM (Anthropic, OpenAI etc.) or one CI provider (GitHub, GitLab, Jenkins)? That is **ci-medic**.
 
 I build and operate a Kubernetes platform and maintain CI for a few
-open-source projects, including the RISC-V build matrix for llama.cpp. "Read the
+open-source projects, including the RISC-V build matrix for [llama.cpp]. "Read the
 log, find the real error, decide if it's worth a retry" is a tax I pay constantly.
 So I built a tool to pay it for me.
 
