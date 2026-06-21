@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Ali Tariq"
 theme = "PaperMod"
 
-# pagination — handles any number of posts gracefully
+# pagination, handles any number of posts gracefully
 [pagination]
   pagerSize = 10
 
@@ -17,20 +17,20 @@ buildFuture = false
 
 [params]
   env = "production"
-  description = "DevOps & platform engineering — Kubernetes, RISC-V, Linux kernel. Notes, projects, and writing."
+  description = "Platform engineering, Kubernetes, RISC-V, and the Linux kernel. Notes, projects, and the tools I build."
   author = "Ali Tariq"
   defaultTheme = "auto"        # respects the reader's light/dark preference
   ShowReadingTime = true
   ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true   # copy button on code blocks — good for a dev blog
+  ShowCodeCopyButtons = true   # copy button on code blocks, good for a dev blog
   ShowToc = true
   TocOpen = false
 
   [params.homeInfoParams]
     Title = "Ali Tariq"
-    Content = "Senior DevOps engineer. I work on Kubernetes platforms, RISC-V infrastructure, and the Linux kernel. I write about CI, platform engineering, and the tools I build."
+    Content = "Senior platform engineer, Linux kernel contributor, and author of the Cloud-V public RISC-V cloud platform and its RISC-V CI infrastructure. I work on Kubernetes, distributed heterogeneous computing, and bare-metal infrastructure at scale. I write about CI, platform engineering, the role of AI in them, and the tools I build."
 
   [[params.socialIcons]]
     name = "github"
