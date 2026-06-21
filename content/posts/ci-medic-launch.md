@@ -161,7 +161,7 @@ ci-medic is the lightweight, open-source middle: it triages on any CI (including
 Here is the breakdown of why this approach matters:
 
 1. **It runs automatically and finds the line for you.** No clicking into the log, no pasting the error into a chat box. The verdict is waiting on the PR when you look.
-2. **It works where hosted assistants don't.** It runs on self-hosted Jenkins today, GitLab next. A tool locked to one CI host cannot help teams running their own bare-metal runners.
+2. **It works where hosted assistants don't.** It runs on self-hosted Jenkins today, GitLab next. A tool locked to one CI host cannot help teams running their own runners.
 3. **Your logs don't have to leave your network.** Redaction plus bring-your-own model (including an air-gapped local LLM) is not something a hosted SaaS button can offer.
 
 ## Try it
