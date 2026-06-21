@@ -105,7 +105,7 @@ Here is a live pull request where ci-medic triaged five different deliberately-b
 
 Synthetic examples prove nothing, so I also ran ci-medic against **13 real failed CI
 logs**, from the llama.cpp build matrix, a Kubernetes RISC-V project, and a
-deliberately-broken playground, and checked every verdict by hand.
+deliberately-broken playground. I manually audited these to see if the reasoning held up. It's a small, qualitative sample size to prove the concept, not a definitive statistical benchmark.
 
 A representative set, all verdicts the tool produced:
 
@@ -153,17 +153,17 @@ python3 -c "from ci_medic.preprocess.redact import redact; print(redact('YOUR_TE
 For zero egress, point it at a local model and no log content leaves your machine
 at all.
 
-## Why not just use a GitHub-hosted "explain this error" button?
+## How this differs from what's out there
 
-Fair question, and the first one I expect. Three differences:
+There are AI CI-log tools already, so why this one? The hosted assistants (like GitHub Copilot or GitLab Duo) are platform-locked and send your logs to their backend. The self-healing AI agents (like Dagger or Harness) go further by opening fix PRs, but they are incredibly heavyweight and framework-specific. 
 
-1. **It runs automatically, on failure, and finds the line for you.** No clicking
-   into the log, no pasting the error into a box. The verdict is waiting on the PR
-   when you look.
-2. **It works where hosted assistants don't**, on self-hosted Jenkins today,
-   GitLab next. A tool locked to one CI host can't help teams running their own.
-3. **Your logs don't have to leave your network.** Redaction plus bring-your-own
-   model, including a fully local one, is not something a hosted button offers.
+ci-medic is the lightweight, open-source middle: it triages on any CI (including self-hosted Jenkins), with any model (including local ones), and it redacts secrets before the model ever sees the log. It is for teams who want the triage without sending their logs to someone else's service.
+
+Here is the breakdown of why this approach matters:
+
+1. **It runs automatically and finds the line for you.** No clicking into the log, no pasting the error into a chat box. The verdict is waiting on the PR when you look.
+2. **It works where hosted assistants don't.** It runs on self-hosted Jenkins today, GitLab next. A tool locked to one CI host cannot help teams running their own bare-metal runners.
+3. **Your logs don't have to leave your network.** Redaction plus bring-your-own model (including an air-gapped local LLM) is not something a hosted SaaS button can offer.
 
 ## Try it
 
