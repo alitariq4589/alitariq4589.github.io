@@ -101,7 +101,9 @@ This is the full case for using it:
 
 ## Does it actually work? 13 real logs.
 
-Synthetic examples prove nothing, so I ran ci-medic against **13 real failed CI
+Here is a live pull request where ci-medic triaged five different deliberately-broken jobs and posted its verdicts as a comment: [ci-medic-playground PR #1](https://github.com/alitariq4589/ci-medic-playground/pull/1). Every verdict in this PR is something you can click through and verify, including the redacted AWS key in the fake-secret-leak job's evidence.
+
+Synthetic examples prove nothing, so I also ran ci-medic against **13 real failed CI
 logs**, from the llama.cpp build matrix, a Kubernetes RISC-V project, and a
 deliberately-broken playground, and checked every verdict by hand.
 
