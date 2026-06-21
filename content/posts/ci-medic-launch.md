@@ -14,10 +14,10 @@ You do this several times a day. Everyone on your team does. It is one of the mo
 repeated, least interesting tasks in software, and it scales linearly with how
 much CI you run.
 
-Wouldn't you rather have something read those four thousand lines for you, find the one that matters, and tell you whether to fix it or just retry? And do it without locking you to one LLM (Anthorpic, OpenAI etc.) or one CI provider (GitHub, GitLab, Jenkins)? That is **ci-medic**.
+Wouldn't you rather have something read those four thousand lines for you, find the one that matters, and tell you whether to fix it or just retry? And do it without locking you to one LLM (Anthropic, OpenAI etc.) or one CI provider (GitHub, GitLab, Jenkins)? That is **ci-medic**.
 
 I build and operate a Kubernetes platform and maintain CI for a few
-open-source projects, including the RISC-V build matrix for [llama.cpp]. "Read the
+open-source projects, including the RISC-V build matrix for llama.cpp. "Read the
 log, find the real error, decide if it's worth a retry" is a tax I pay constantly.
 So I built a tool to pay it for me.
 
@@ -79,7 +79,7 @@ This is the full case for using it:
 
 5. **It can run with zero data egress.** Point it at a local model (Ollama,
    llama.cpp's `llama-server`, or any OpenAI-compatible endpoint) and no log
-   content ever leaves your network.
+   content ever leaves your network. With a cloud model, only the distilled, redacted window is sent.
 
 6. **It is model-agnostic.** Bring your own provider: OpenRouter, OpenAI,
    Anthropic, or a local server. You are not locked to one vendor's model.
@@ -129,8 +129,7 @@ defensible either way (`code` versus `infra`), and the model flagged its own low
 confidence at 78%, which is the behaviour I want: less certain on genuinely
 ambiguous failures, not falsely confident.
 
-The honest caveats about these tests is **13 logs, hand-checked, not a labelled benchmark**,
-so I won't quote a percentage that implies more rigour than that. These verdicts
+The honest caveat about these tests: it is 13 logs, hand-checked, not a labelled benchmark, so I won't quote a percentage that implies more rigour than that. These verdicts
 all came from a free open-weights model, so results will vary by model. And the
 sample skews toward build, test, and dependency failures because that's what my CI
 actually produces.
